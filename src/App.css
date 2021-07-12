@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+
+:root {
+  --cardMargin: 8px;
+  --green: #88B33E;
+  --dark-green: #3B7241;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+body {
+  margin: 0;
+  background-color: #fafafa;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#wpalogo {
+  height: 60%;
+}
+
+header {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  height: 50px;
+  padding: 10px 20px;
+  background: #fff;
+  border-bottom: 2px solid #ccc;
+}
+
+header>div {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+
+header button {
+  height: 100%;
+  border: 0;
+  padding: 0 10px;
+  background: var(--green);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color .15s;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+header button:hover {
+  background: var(--dark-green);
+}
+
+.cards {
+  display: flex;
+  flex-flow: row wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* align-items: flex-start; */
+  align-content: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  min-width: 200px;
+  max-width: calc(400px + var(--cardMargin) * 2);
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: var(--cardMargin);
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.card p,
+.card a {
+  font-size: 24px;
+  margin: 0 0 6px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+}
+
+.card p {
+  font-weight: 500;
+}
+
+.card a {
+  display: block;
+  color: var(--green);
+  text-decoration: none;
+}
+
+
+@media (max-width: 950px) {
+  .card {
+    width: 250px;
   }
 }
