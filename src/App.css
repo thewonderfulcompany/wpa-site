@@ -29,6 +29,9 @@ header {
   padding: 10px 20px;
   background: #fff;
   border-bottom: 2px solid #ccc;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 header>div {
@@ -55,15 +58,30 @@ header button:hover {
   background: var(--dark-green);
 }
 
-.cards {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  /* align-items: flex-start; */
-  align-content: center;
+.section:first-of-type{
+  padding-top:50px;
+}
+
+.section {
   max-width: 1200px;
   margin: auto;
   padding: 20px;
+  margin-bottom: 50px;
+}
+
+.section h1{
+  margin: 20px 10px;
+  font-weight: 300;
+  font-size: 55px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #ccc;
+}
+
+.cards {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+
 }
 
 .card {
@@ -80,7 +98,7 @@ header button:hover {
 .card p,
 .card a {
   font-size: 24px;
-  margin: 0 0 6px 0;
+  margin: 0 0 10px 0;
   overflow: hidden;
   white-space: nowrap;
   overflow-wrap: break-word;
@@ -95,7 +113,10 @@ header button:hover {
   display: block;
   color: var(--green);
   text-decoration: none;
+  transition: color .15s;
 }
+
+.card a:hover{color: var(--dark-green);}
 
 
 @media (max-width: 950px) {
