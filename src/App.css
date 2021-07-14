@@ -70,15 +70,18 @@ header button:hover {
 }
 
 .section h1{
-  margin: 20px 10px;
+  margin: 0px;
   font-weight: 300;
   font-size: 55px;
-  padding-bottom: 5px;
-  border-bottom: 2px solid #ccc;
+  padding-bottom: 8px;
+  /* border-bottom: 2px solid #ccc; */
 }
 
 .cards {
-  display: flex;
+  padding-top: 10px;
+  border-top: 2px solid #ccc;
+  flex-shrink: 1;
+  display: inline-flex;
   flex-flow: row wrap;
   align-content: center;
 
