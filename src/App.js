@@ -121,9 +121,28 @@ const dummyData = {
 
 
 function Sections(){
-  return Object.keys(dummyData).map(
-    section => <Section title={section} cards={dummyData[section]}/>
+
+  const sections = Object.keys(dummyData).map(
+    section => <Section title={section} cards={dummyData[section]} key={section}/>
   )
+
+  const nav = (
+    <nav>
+      <div>
+        <h3>Page Contents</h3>
+        {Object.keys(dummyData).map(
+          section => <a href={`#${section.toLowerCase()}`} key={section}>{section}</a>
+        )}
+      </div>
+    </nav>
+  )
+
+  return (
+    <div className='content'>
+      <div className='sections'>{sections}</div>
+      {nav}
+    </div>
+  ) 
 }
 
 
@@ -131,12 +150,12 @@ function Section(props){
   const {title, cards} = props
   
   return (
-    <div className='section'>
+    <div className='section' id={title.toLowerCase()}>
       <h1>{title}</h1>
       <div className='cards'>
         {
           Object.keys(cards)
-          .map(card => <Card title={card} links={cards[card]}/>)
+          .map(card => <Card title={card} links={cards[card]} key={card}/>)
         }
       </div>
     </div>
@@ -152,7 +171,7 @@ function Card(props){
       <p>{title}</p>
       {
         Object.keys(links)
-          .map(link => <a href={links[link]}>{link}</a>)
+          .map(link => <a href={links[link]} key={link}>{link}</a>)
       }
     </div>
   )
